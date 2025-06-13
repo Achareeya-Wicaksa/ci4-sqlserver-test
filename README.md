@@ -1,68 +1,90 @@
-# CodeIgniter 4 Application Starter
+# Project CodeIgniter 4 with SQL Server
 
-## What is CodeIgniter?
 
-CodeIgniter is a PHP full-stack web framework that is light, fast, flexible and secure.
-More information can be found at the [official site](https://codeigniter.com).
+## 📋 Prasyarat Sistem
 
-This repository holds a composer-installable app starter.
-It has been built from the
-[development repository](https://github.com/codeigniter4/CodeIgniter4).
+Sebelum menjalankan aplikasi ini, pastikan lingkungan pengembangan kamu sudah memenuhi persyaratan berikut:
 
-More information about the plans for version 4 can be found in [CodeIgniter 4](https://forum.codeigniter.com/forumdisplay.php?fid=28) on the forums.
+### 1. PHP
 
-You can read the [user guide](https://codeigniter.com/user_guide/)
-corresponding to the latest version of the framework.
+- Versi PHP minimal: **8.1** (disarankan 8.1 atau lebih baru)
+- Pastikan ekstensi berikut sudah aktif:
+  - `sqlsrv` (Microsoft Drivers untuk SQL Server)
+  - `pdo_sqlsrv`
+  - `mbstring`
+  - `intl`
+  - `openssl`
+  - `curl`
+- Disarankan menggunakan **XAMPP / Laragon / PHP standalone** yang sudah mendukung ekstensi SQL Server
 
-## Installation & updates
+### 2. SQL Server
 
-`composer create-project codeigniter4/appstarter` then `composer update` whenever
-there is a new release of the framework.
+- Versi SQL Server minimal: **Microsoft SQL Server 2022 (v21.x)** atau versi terbaru yang kompatibel
+- Pastikan SQL Server berjalan dan dapat diakses dari komputer kamu
+- Gunakan SQL Server Management Studio (SSMS) untuk import dan manajemen database
 
-When updating, check the release notes to see if there are any changes you might need to apply
-to your `app` folder. The affected files can be copied or merged from
-`vendor/codeigniter4/framework/app`.
+### 3. Composer
 
-## Setup
+- Pastikan [Composer](https://getcomposer.org/) sudah terinstall untuk mengelola dependensi CodeIgniter
 
-Copy `env` to `.env` and tailor for your app, specifically the baseURL
-and any database settings.
+---
 
-## Important Change with index.php
+## 🚀 Cara Menjalankan Aplikasi
 
-`index.php` is no longer in the root of the project! It has been moved inside the *public* folder,
-for better security and separation of components.
+1. Clone Repository 
+```bash
+git clone https://github.com/Achareeya-Wicaksa/ci4-sqlserver-test.git
+```
 
-This means that you should configure your web server to "point" to your project's *public* folder, and
-not to the project root. A better practice would be to configure a virtual host to point there. A poor practice would be to point your web server to the project root and expect to enter *public/...*, as the rest of your logic and the
-framework are exposed.
+2. Install dependencies dengan Composer
+```bash
+composer install
+```
+3. Konfigurasi .env
+sesuaikan .env.example dengan alamat sql server anda
+```bash
+database.default.hostname = localhost
+database.default.username = sa
+database.default.password = sayakeren
+database.default.database = TokoDB
+database.default.DBDriver = SQLSRV
+```
 
-**Please** read the user guide for a better explanation of how CI4 works!
+## ⚙️ Setup Database
 
-## Repository Management
+Database utama ada pada file:
 
-We use GitHub issues, in our main repository, to track **BUGS** and to track approved **DEVELOPMENT** work packages.
-We use our [forum](http://forum.codeigniter.com) to provide SUPPORT and to discuss
-FEATURE REQUESTS.
+```plaintext
+database/TokoDB.sql
 
-This repository is a "distribution" one, built by our release preparation script.
-Problems with it can be raised on our forum, or as issues in the main repository.
+Cara import database:
+Buka SQL Server Management Studio (SSMS)
 
-## Server Requirements
+Masukkan sql pada TokoDB.sql
 
-PHP version 8.1 or higher is required, with the following extensions installed:
+execute sql.
+```
 
-- [intl](http://php.net/manual/en/intl.requirements.php)
-- [mbstring](http://php.net/manual/en/mbstring.installation.php)
+untuk cek apakah db sudah jadi masukan sql 
+```bash
+USE TokoDB;
+GO
+SELECT * FROM Kategori;
+SELECT * FROM Produk;
 
-> [!WARNING]
-> - The end of life date for PHP 7.4 was November 28, 2022.
-> - The end of life date for PHP 8.0 was November 26, 2023.
-> - If you are still using PHP 7.4 or 8.0, you should upgrade immediately.
-> - The end of life date for PHP 8.1 will be December 31, 2025.
+```
+## Jalankan server built-in ci4
+```bash
+php spark serve
+```
+server akan berjalan default di
+```bash
+http://localhost:8080
+```
 
-Additionally, make sure that the following extensions are enabled in your PHP:
+## 🧰 Fitur utama
+- CRUD produk menggunakan SQL Server
 
-- json (enabled by default - don't turn it off)
-- [mysqlnd](http://php.net/manual/en/mysqlnd.install.php) if you plan to use MySQL
-- [libcurl](http://php.net/manual/en/curl.requirements.php) if you plan to use the HTTP\CURLRequest library
+- Autentikasi user (jika ada)
+
+- Desain modular dan mudah dikembangkan
