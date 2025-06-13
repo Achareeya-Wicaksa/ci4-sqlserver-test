@@ -1,5 +1,8 @@
 # Project CodeIgniter 4 with SQL Server
 
+![ssms](assets/images/ssms.gif)
+
+![ssms](assets/images/ssms.png)
 
 ## 📋 Prasyarat Sistem
 
@@ -88,3 +91,13 @@ http://localhost:8080
 - Autentikasi user (jika ada)
 
 - Desain modular dan mudah dikembangkan
+
+
+```bash
+/produk => halaman utama manajemen produk
+/produk/create => halaman tambah produk baru
+produk/edit/id => edit produk sesuai id
+/kategori => halaman utama manajemen kategori
+/kategori/create => halaman tambah kategori baru
+/kategori/edit/1 => edit kategori sesuai id
+```
