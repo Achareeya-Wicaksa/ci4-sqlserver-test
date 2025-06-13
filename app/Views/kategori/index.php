@@ -34,7 +34,7 @@
                         <a href="/kategori/edit/<?= $k['id_kategori'] ?>" 
                            class="text-blue-600 hover:underline mr-2">Edit</a> |
                         <a href="/kategori/delete/<?= $k['id_kategori'] ?>" 
-                           onclick="return confirm('Hapus?')" 
+                           onclick="return confirm('Delete?')" 
                            class="text-red-600 hover:underline ml-2">Delete</a>
                     </td>
                 </tr>

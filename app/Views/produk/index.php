@@ -48,7 +48,7 @@
                         render: function(data) {
                             return `
                                 <a href="/produk/edit/${data}" class="text-blue-600 hover:underline">Edit</a> |
-                                <a href="/produk/delete/${data}" onclick="return confirm('Hapus?')" class="text-red-600 hover:underline">Delete</a>
+                                <a href="/produk/delete/${data}" onclick="return confirm('Delete?')" class="text-red-600 hover:underline">Delete</a>
                             `;
                         }
                     }
