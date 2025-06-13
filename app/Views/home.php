@@ -22,12 +22,12 @@
 
       <a href="/produk" 
          class="w-48 h-48 bg-white border border-gray-300 rounded-lg shadow-sm flex items-center justify-center text-gray-800 text-xl font-semibold hover:shadow-md hover:border-blue-500 transition duration-300">
-        Manage Produk
+        Manage Products
       </a>
 
       <a href="/kategori" 
          class="w-48 h-48 bg-white border border-gray-300 rounded-lg shadow-sm flex items-center justify-center text-gray-800 text-xl font-semibold hover:shadow-md hover:border-green-500 transition duration-300">
-        Manage Kategori
+        Manage Category
       </a>
 
     </div>

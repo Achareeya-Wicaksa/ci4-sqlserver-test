@@ -2,18 +2,18 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8" />
-    <title>Data Kategori</title>
+    <title>Data Category</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gray-100 min-h-screen flex flex-col items-center py-10">
 
     <div class="w-full max-w-4xl bg-white rounded shadow p-6">
-        <h1 class="text-3xl font-bold mb-6 text-center">Data Kategori</h1>
+        <h1 class="text-3xl font-bold mb-6 text-center">Data Category</h1>
 
         <div class="mb-4 text-left">
             <a href="/kategori/create" 
                class="inline-block bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded shadow">
-               + Tambah Kategori
+               + Add Category
             </a>
         </div>
 
@@ -35,7 +35,7 @@
                            class="text-blue-600 hover:underline mr-2">Edit</a> |
                         <a href="/kategori/delete/<?= $k['id_kategori'] ?>" 
                            onclick="return confirm('Hapus?')" 
-                           class="text-red-600 hover:underline ml-2">Hapus</a>
+                           class="text-red-600 hover:underline ml-2">Delete</a>
                     </td>
                 </tr>
                 <?php endforeach; ?>
@@ -43,7 +43,7 @@
         </table>
 
         <div class="mt-6 text-center">
-            <a href="/produk" class="text-blue-600 hover:underline">Ke Data Produk</a>
+            <a href="/produk" class="text-blue-600 hover:underline">To Products data</a>
         </div>
     </div>
 
