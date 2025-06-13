@@ -45,7 +45,7 @@ sesuaikan .env.example dengan alamat sql server anda
 ```bash
 database.default.hostname = localhost
 database.default.username = sa
-database.default.password = sayakeren
+database.default.password = passord anda
 database.default.database = TokoDB
 database.default.DBDriver = SQLSRV
 ```
